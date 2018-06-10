@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <SmallTileSource>D:\ProgramData\Visual Studio 2017\MyList\MyList\Assets\BG.jpg</SmallTileSource>
+    <Source>D:\ProgramData\Visual Studio 2017\MyList\MyList\Assets\BG.jpg</Source>
+    <MediumTileSource>D:\ProgramData\Visual Studio 2017\MyList\MyList\Assets\BG.jpg</MediumTileSource>
+    <WideTileSource>D:\ProgramData\Visual Studio 2017\MyList\MyList\Assets\BG.jpg</WideTileSource>
+    <LargeTileSource>D:\ProgramData\Visual Studio 2017\MyList\MyList\Assets\BG.jpg</LargeTileSource>
+    <AppIconSource>D:\ProgramData\Visual Studio 2017\MyList\MyList\Assets\BG.jpg</AppIconSource>
+    <SplashScreenSource>D:\ProgramData\Visual Studio 2017\MyList\MyList\Assets\BG.jpg</SplashScreenSource>
+    <PackageLogoSource>D:\ProgramData\Visual Studio 2017\MyList\MyList\Assets\BG.jpg</PackageLogoSource>
+  </PropertyGroup>
+</Project>
