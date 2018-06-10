@@ -1,0 +1,56 @@
+﻿<Page
+    x:Class="MediaPlayer.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:MediaPlayer"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Page.Resources>
+        <local:Converter x:Key="progress"/>
+    </Page.Resources>
+    <Grid>
+        <Grid.Background>
+            <ImageBrush Stretch="UniformToFill" ImageSource="Assets/backgroud.jpg"/>
+        </Grid.Background>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="400"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <StackPanel Grid.Column="1">
+            <Ellipse x:ConnectionId='1' Width="400" Height="400" x:Name="picture" Visibility="Collapsed" RenderTransformOrigin="0.5, 0.5">
+                <Ellipse.Fill>
+                    <ImageBrush x:ConnectionId='5' ImageSource="Assets/Jay.jpg" x:Name="image"/>
+                </Ellipse.Fill>
+                <Ellipse.RenderTransform>
+                    <CompositeTransform/>
+                </Ellipse.RenderTransform>
+                <Ellipse.Resources>
+                    <Storyboard x:ConnectionId='6' x:Name="ellstoryBoard" RepeatBehavior="Forever">
+                        <DoubleAnimation Duration="0:0:20" To="360" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.Rotation)" Storyboard.TargetName="picture" d:IsOptimized="True"/>
+                    </Storyboard>
+                </Ellipse.Resources>
+            </Ellipse>
+            <MediaElement x:ConnectionId='2' x:Name="mediaPlayer" Width="400" Height="400" AutoPlay="False" AreTransportControlsEnabled="False" Source="/Assets/Avengers.mp4"                                      />
+            <Slider x:ConnectionId='3' x:Name="progressSlider" Value="{Binding Position, ElementName=mediaPlayer, Converter={StaticResource progress}, Mode=TwoWay}" Width="400"/>
+
+            <StackPanel HorizontalAlignment="Left" Orientation="Horizontal">
+                <AppBarButton Icon="Volume"/>
+                <Slider x:ConnectionId='4' x:Name="volumeSlider" Width="70" Minimum="0" Maximum="1" Value="0.5" StepFrequency="0.1"                                         />
+            </StackPanel>
+
+        </StackPanel>
+    </Grid>
+    <Page.BottomAppBar>
+        <CommandBar>
+            <AppBarButton x:ConnectionId='7' x:Name="play" Icon="Play" Label="Play"                   />
+            <AppBarButton x:ConnectionId='8' x:Name="pause" Icon="Pause" Label="Pause"                    />
+            <AppBarButton x:ConnectionId='9' x:Name="stop" Icon="Stop" Label="Stop"                   />
+            <AppBarButton x:ConnectionId='10' x:Name="openFile" Icon="OpenFile" Label="OpenFile"                       />
+            <AppBarButton x:ConnectionId='11' x:Name="fullScreen" Icon="FullScreen" Label="FullScreen"                         />
+        </CommandBar>
+    </Page.BottomAppBar>
+</Page>
+
